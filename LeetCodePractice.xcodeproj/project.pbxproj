@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		EDD204A42ABFB1C400C00BC6 /* LeetCodePractice.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDD204A32ABFB1C400C00BC6 /* LeetCodePractice.docc */; };
 		EDD204AA2ABFB1C400C00BC6 /* LeetCodePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD2049F2ABFB1C400C00BC6 /* LeetCodePractice.framework */; };
-		EDD204AF2ABFB1C400C00BC6 /* LeetCodePracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD204AE2ABFB1C400C00BC6 /* LeetCodePracticeTests.swift */; };
 		EDD204B02ABFB1C400C00BC6 /* LeetCodePractice.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD204A22ABFB1C400C00BC6 /* LeetCodePractice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDD204BA2ABFB23D00C00BC6 /* ArraysAndHashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD204B92ABFB23D00C00BC6 /* ArraysAndHashing.swift */; };
+		EDD204BC2ABFB2C900C00BC6 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD204BB2ABFB2C900C00BC6 /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,8 @@
 		EDD204A22ABFB1C400C00BC6 /* LeetCodePractice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeetCodePractice.h; sourceTree = "<group>"; };
 		EDD204A32ABFB1C400C00BC6 /* LeetCodePractice.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LeetCodePractice.docc; sourceTree = "<group>"; };
 		EDD204A92ABFB1C400C00BC6 /* LeetCodePracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodePracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD204AE2ABFB1C400C00BC6 /* LeetCodePracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCodePracticeTests.swift; sourceTree = "<group>"; };
+		EDD204B92ABFB23D00C00BC6 /* ArraysAndHashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysAndHashing.swift; sourceTree = "<group>"; };
+		EDD204BB2ABFB2C900C00BC6 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				EDD204A22ABFB1C400C00BC6 /* LeetCodePractice.h */,
 				EDD204A32ABFB1C400C00BC6 /* LeetCodePractice.docc */,
+				EDD204BB2ABFB2C900C00BC6 /* Solution.swift */,
 			);
 			path = LeetCodePractice;
 			sourceTree = "<group>";
@@ -80,7 +83,7 @@
 		EDD204AD2ABFB1C400C00BC6 /* LeetCodePracticeTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDD204AE2ABFB1C400C00BC6 /* LeetCodePracticeTests.swift */,
+				EDD204B92ABFB23D00C00BC6 /* ArraysAndHashing.swift */,
 			);
 			path = LeetCodePracticeTests;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 					};
 					EDD204A82ABFB1C400C00BC6 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD204BC2ABFB2C900C00BC6 /* Solution.swift in Sources */,
 				EDD204A42ABFB1C400C00BC6 /* LeetCodePractice.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD204AF2ABFB1C400C00BC6 /* LeetCodePracticeTests.swift in Sources */,
+				EDD204BA2ABFB23D00C00BC6 /* ArraysAndHashing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,14 +401,22 @@
 		EDD204B72ABFB1C400C00BC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P649CF844Y;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ayrenking.LeetCodePracticeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -412,10 +425,17 @@
 		EDD204B82ABFB1C400C00BC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P649CF844Y;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ayrenking.LeetCodePracticeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
