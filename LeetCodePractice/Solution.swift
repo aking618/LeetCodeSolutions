@@ -10,7 +10,7 @@ class Solution {
     /// Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
     func containsDuplicate(_ nums: [Int]) -> Bool {
         return nums.reduce(into: [Int:Int]()) { (result, num) in
-            result[num] = 1 + (result[num] ?? 0)
+            result[num, default: 0] += 1
         }
         .values
         .contains(where: { $0 > 1 })
@@ -158,5 +158,29 @@ class Solution {
         }
         
         return true
+    }
+    
+    /// Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+    ///
+    /// Complexity: O(n)
+    func longestConsecutive(_ nums: [Int]) -> Int {
+        var set = Set(nums)
+        var longestSteak = 0
+        
+        for num in set {
+            if set.contains(num - 1) { continue }
+            
+            var currentNum = num
+            var currentStreak = 1
+            
+            while set.contains(currentNum + 1) {
+                currentNum += 1
+                currentStreak += 1
+            }
+            
+            longestSteak = max(longestSteak, currentStreak)
+        }
+        
+        return longestSteak
     }
 }
