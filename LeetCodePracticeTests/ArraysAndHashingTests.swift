@@ -1,5 +1,5 @@
 //
-//  ArraysAndHashing.swift
+//  ArraysAndHashingTests.swift
 //  LeetCodePracticeTests
 //
 //  Created by Ayren King on 9/23/23.
@@ -9,9 +9,9 @@ import XCTest
 
 @testable import LeetCodePractice
 
-final class ArraysAndHashing: XCTestCase {
+final class ArraysAndHashingTests: XCTestCase {
     
-    let solution: Solution = Solution()
+    let solution: ArraysAndHashing = ArraysAndHashing()
 
     func testContainsDuplicate() {
         XCTAssertTrue(solution.containsDuplicate([1,2,3,1]))

@@ -118,3 +118,80 @@ class Stacks {
         return validParenthesis
     }
 }
+
+extension Stacks {
+    /// MinStack where each funcion runs in O(1) time
+    class MinStack {
+        
+        /// Each entry keeps track of the minimum at the current point in the stack
+        var stack: [(element: Int, min: Int)]
+
+        init() {
+            stack = []
+        }
+        
+        func push(_ val: Int) {
+            if let currentMin = stack.last?.min {
+                stack.append((val, min(currentMin, val)))
+                return
+            }
+            
+            stack.append((val, val))
+            print(stack)
+        }
+        
+        func pop() {
+            stack.removeLast()
+        }
+        
+        func top() -> Int {
+            stack.last!.element
+        }
+        
+        func getMin() -> Int {
+            stack.last!.min
+        }
+    }
+    
+    // Monotonic
+    func dailyTemperatures(_ temperatures: [Int]) -> [Int] {
+        var result = Array(repeating: 0, count: temperatures.count)
+        var stack = [(temperature: Int, index: Int)]()
+
+        for (i, temperature) in temperatures.enumerated() {
+            while let last = stack.last, temperature > last.temperature {
+                result[last.index] = i - last.index
+                stack.removeLast()
+            }
+            
+            stack.append((temperature, i))
+        }
+
+        return result
+    }
+    
+    func carFleet(_ target: Int, _ position: [Int], _ speed: [Int]) -> Int {
+        let cars = zip(position, speed) // Combine position and speed
+                .map { (position: $0.0, speed: $0.1) } // map to named tuple (for fun)
+                .sorted(by: { $0.position < $1.position }) // sort by lowest position
+    
+        var stack = [Double]()
+
+        for car in cars {
+            // how long will it take the current car to reach the target?
+            let time = Double(target - car.position) / Double(car.speed)
+            
+            while let last = stack.last, time >= last {
+                // if the newest time is "longer" than the current top of the stack, the cars at that speed will "catch up" and go the "longer" speed
+                // pop until a slower time is found
+                stack.removeLast()
+            }
+            
+            // append the time for the car fleet
+            stack.append(time)
+        }
+
+        // Any time remaining represent the fleets
+        return stack.count
+    }
+}
