@@ -35,4 +35,9 @@ class TwoPointersTests: XCTestCase {
         XCTAssertEqual(solution.maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]), 49)
         XCTAssertEqual(solution.maxArea([1, 1]), 1)
     }
+    
+    func testNeedleHaystack() {
+        XCTAssertEqual(solution.strStr("sadbutsad", "sad"), 0)
+        XCTAssertEqual(solution.strStr("leetcode", "leeto"), -1)
+    }
 }
