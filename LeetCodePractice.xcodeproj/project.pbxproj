@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDB20BD72AC482A5002B7F1C /* ArraysAndHasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB20BD62AC482A5002B7F1C /* ArraysAndHasing.swift */; };
+		EDB20BD72AC482A5002B7F1C /* ArraysAndHashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB20BD62AC482A5002B7F1C /* ArraysAndHashing.swift */; };
 		EDB20BD92AC483AC002B7F1C /* TwoPointers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB20BD82AC483AC002B7F1C /* TwoPointers.swift */; };
 		EDB20BDB2AC48404002B7F1C /* TwoPointersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB20BDA2AC48404002B7F1C /* TwoPointersTests.swift */; };
 		EDB20C0B2ACE1ECD002B7F1C /* LinkedLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB20C0A2ACE1ECD002B7F1C /* LinkedLists.swift */; };
@@ -33,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EDB20BD62AC482A5002B7F1C /* ArraysAndHasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysAndHasing.swift; sourceTree = "<group>"; };
+		EDB20BD62AC482A5002B7F1C /* ArraysAndHashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArraysAndHashing.swift; sourceTree = "<group>"; };
 		EDB20BD82AC483AC002B7F1C /* TwoPointers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPointers.swift; sourceTree = "<group>"; };
 		EDB20BDA2AC48404002B7F1C /* TwoPointersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPointersTests.swift; sourceTree = "<group>"; };
 		EDB20C0A2ACE1ECD002B7F1C /* LinkedLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedLists.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				EDD204A22ABFB1C400C00BC6 /* LeetCodePractice.h */,
 				EDD204A32ABFB1C400C00BC6 /* LeetCodePractice.docc */,
 				EDD204BB2ABFB2C900C00BC6 /* Stacks.swift */,
-				EDB20BD62AC482A5002B7F1C /* ArraysAndHasing.swift */,
+				EDB20BD62AC482A5002B7F1C /* ArraysAndHashing.swift */,
 				EDB20C0A2ACE1ECD002B7F1C /* LinkedLists.swift */,
 				EDB20BD82AC483AC002B7F1C /* TwoPointers.swift */,
 				EDB20C0E2AD35278002B7F1C /* SlidingWindow.swift */,
@@ -227,7 +227,7 @@
 				EDB20C0F2AD35278002B7F1C /* SlidingWindow.swift in Sources */,
 				EDB20BD92AC483AC002B7F1C /* TwoPointers.swift in Sources */,
 				EDB20C0B2ACE1ECD002B7F1C /* LinkedLists.swift in Sources */,
-				EDB20BD72AC482A5002B7F1C /* ArraysAndHasing.swift in Sources */,
+				EDB20BD72AC482A5002B7F1C /* ArraysAndHashing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
