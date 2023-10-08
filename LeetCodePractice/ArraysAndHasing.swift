@@ -10,7 +10,7 @@ import Foundation
 class ArraysAndHashing {
     /// Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
     func containsDuplicate(_ nums: [Int]) -> Bool {
-        return nums.reduce(into: [Int: Int]()) { result, num in
+        nums.reduce(into: [Int: Int]()) { result, num in
             result[num, default: 0] += 1
         }
         .values
@@ -90,7 +90,7 @@ class ArraysAndHashing {
         }
 
         let sorted = dict.sorted(by: { $0.value > $1.value })
-        let result = sorted.map { $0.key }.prefix(k)
+        let result = sorted.map(\.key).prefix(k)
 
         return Array(result)
     }

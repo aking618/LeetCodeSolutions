@@ -57,7 +57,7 @@ class StackTests: XCTestCase {
         XCTAssertEqual(solution.carFleet(10, [3], [3]), 1)
         XCTAssertEqual(solution.carFleet(100, [0, 2, 4], [4, 2, 1]), 1)
     }
-    
+
     func testLengthOfLongestSubstring() {
         XCTAssertEqual(solution.lengthOfLongestSubstring("abcabcbb"), 3)
         XCTAssertEqual(solution.lengthOfLongestSubstring("bbbbb"), 1)

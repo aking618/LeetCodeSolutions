@@ -115,22 +115,22 @@ class Stacks {
 
         return validParenthesis
     }
-    
+
     /// Longest Substring Without Repeating Characters
     func lengthOfLongestSubstring(_ s: String) -> Int {
         var set = [Character]()
         var maxLength = 0
-        
+
         for char in s {
             while set.contains(char) {
                 set.removeFirst()
             }
-            
+
             set.append(char)
-            
+
             maxLength = max(maxLength, set.count)
         }
-        
+
         return maxLength
     }
 }

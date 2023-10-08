@@ -129,20 +129,21 @@ class TwoPointers {
 
         return maxWaterArea
     }
-    
+
     /// Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
     func strStr(_ haystack: String, _ needle: String) -> Int {
         guard haystack.count > needle.count else { return -1 }
         let haystack = Array(haystack)
-        
+
         for (i, char) in haystack.enumerated() {
             if char == needle.first,
                needle.count + 1 < haystack.count,
-               String(haystack[i..<needle.count + i]) == needle {
+               String(haystack[i ..< needle.count + i]) == needle
+            {
                 return i
             }
         }
-        
+
         return -1
     }
 }

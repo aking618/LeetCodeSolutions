@@ -11,8 +11,8 @@ class LinkedLists {
     /// Given the head of a singly linked list, reverse the list, and return the reversed list.
     func reverseList(_ head: ListNode?) -> ListNode? {
         guard let head else { return nil }
-        
-        var previous: ListNode? = nil
+
+        var previous: ListNode?
         var current: ListNode? = head
         while current != nil {
             let temp = current?.next
@@ -20,10 +20,10 @@ class LinkedLists {
             previous = current
             current = temp
         }
-        
+
         return previous
     }
-    
+
     /// You are given the heads of two sorted linked lists list1 and list2.
     ///
     /// Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
@@ -34,29 +34,29 @@ class LinkedLists {
         var current: ListNode? = result
         var list1 = list1
         var list2 = list2
-        
+
         while let val1 = list1?.val,
-              let val2 = list2?.val {
+              let val2 = list2?.val
+        {
             if val1 < val2 {
                 current?.next = list1
                 list1 = list1?.next
-            }
-            else {
+            } else {
                 current?.next = list2
                 list2 = list2?.next
             }
-            
+
             current = current?.next
         }
-        
+
         if let list1 {
             current?.next = list1
         }
-        
+
         if let list2 {
             current?.next = list2
         }
-        
+
         return result?.next
     }
 }
@@ -65,15 +65,15 @@ extension LinkedLists {
     public class ListNode: Equatable {
         public var val: Int
         public var next: ListNode?
-        
+
         public init() {
             val = 0; next = nil
         }
-        
+
         public init(_ val: Int) {
             self.val = val; next = nil
         }
-        
+
         public init(_ val: Int, _ next: ListNode?) {
             self.val = val; self.next = next
         }
